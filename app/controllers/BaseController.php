@@ -15,4 +15,11 @@ class BaseController extends Controller {
 		}
 	}
 
+	public function getUser()
+	{
+		if (Session::has('user')) {
+			return Session::get('user');
+		}
+	}
+
 }

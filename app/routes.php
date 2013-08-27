@@ -15,5 +15,10 @@ Route::get('/', array('uses' => 'HomeController@index'));
 
 Route::group(array('prefix' => 'orders'), function()
 {
-	Route::get('orders', array('uses' => 'OrdersController@index', 'as' => 'orders.index'));
+	Route::get('/', array('uses' => 'OrdersController@index', 'as' => 'orders.index'));
+});
+
+Route::group(array('prefix' => 'items'), function()
+{
+	Route::get('/', array('uses' => 'ItemsController@index', 'as' => 'items.index'));
 });
