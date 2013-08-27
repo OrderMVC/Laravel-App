@@ -15,6 +15,6 @@ class CartController extends BaseController
 		Session::forget('cart');
 		$cart = new Cart;
 
-		return Session::get('cart');
+		return Redirect::back();
 	}
 }
