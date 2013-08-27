@@ -11,7 +11,7 @@ class ItemsController extends BaseController {
 		$physicalItems = PhysicalItem::all();
 		$items = $digitalItems->merge($physicalItems);
 
-		return View::make('index', compact('user', 'cart', 'items'));
+		return View::make('items.index', compact('user', 'cart', 'items'));
 	}
 
 }
