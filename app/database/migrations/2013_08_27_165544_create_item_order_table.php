@@ -15,6 +15,7 @@ class CreateItemOrderTable extends Migration {
 		{
 			$table->integer('order_id');
 			$table->integer('item_id');
+			$table->integer('amount');
 			$table->string('item_type');
 		});
 	}
