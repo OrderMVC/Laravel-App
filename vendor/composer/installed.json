@@ -1780,12 +1780,12 @@
         "source": {
             "type": "git",
             "url": "https://github.com/laravel/framework.git",
-            "reference": "7ea725f1a22ea825d05c056078bc006995cc4009"
+            "reference": "6220d74ad3c2aa64786cfaff1f7230fd3d465de6"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/7ea725f1a22ea825d05c056078bc006995cc4009",
-            "reference": "7ea725f1a22ea825d05c056078bc006995cc4009",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/6220d74ad3c2aa64786cfaff1f7230fd3d465de6",
+            "reference": "6220d74ad3c2aa64786cfaff1f7230fd3d465de6",
             "shasum": ""
         },
         "require": {
@@ -1849,7 +1849,7 @@
             "pda/pheanstalk": "2.0.*",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2013-08-27 15:09:16",
+        "time": "2013-08-27 15:34:08",
         "type": "library",
         "extra": {
             "branch-alias": {
