@@ -4,7 +4,10 @@ class CartController extends BaseController
 {
 	public function index()
 	{
-		var_dump($this->getCart());
+		$cart = $this->getCart();
+		$user = $this->getUser();
+
+		return View::make('cart.index', compact('cart', 'user'));
 	}
 
 	public function destroy()
