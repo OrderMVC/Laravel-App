@@ -1,3 +1,13 @@
 ul.tiles li {
 	display: inline-block;
 }
+
+.alert {
+	position: relative;
+}
+
+i.dismiss {
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
+}

@@ -13,11 +13,22 @@
     <div class="row">
         <h1>{{HTML::linkroute('index', 'OrderMVC')}}</h1>
         @include('_header')
+        @include('_alerts')
     </div>
 
     @yield('content')
 </div>
 
+{{HTML::script('js/libs/jquery-2.0.2.min.js')}}
+<script>
+	$('.dismiss').on('click', function()
+	{
+		$(this).parent('.alert').fadeOut(function()
+		{
+			$(this).remove();
+		});
+	});
+</script>
 
 </body>
 </html>
