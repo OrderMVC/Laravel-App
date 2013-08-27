@@ -11,8 +11,3 @@
 		<i class="dismiss icon-cancel"></i>
 	</div>
 @endif
-
-<div class="success alert">
-	Test
-	<i class="dismiss icon-cancel"></i>
-</div>
