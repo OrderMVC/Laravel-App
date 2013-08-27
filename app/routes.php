@@ -13,12 +13,10 @@
 
 Route::get('/', array('uses' => 'HomeController@index'));
 
-Route::group(array('prefix' => 'orders'), function()
-{
-	Route::get('/', array('uses' => 'OrdersController@index', 'as' => 'orders.index'));
-});
+Route::resource('orders', 'OrdersController');
 
-Route::group(array('prefix' => 'items'), function()
-{
-	Route::get('/', array('uses' => 'ItemsController@index', 'as' => 'items.index'));
-});
+Route::resource('items', 'ItemsController');
+
+Route::get('login', array('uses' => 'UsersController@create', 'as' => 'users.create'));
+
+Route::get('cart', array('uses' => 'Cart@index', 'as' => 'cart.index'));

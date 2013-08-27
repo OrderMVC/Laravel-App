@@ -12,6 +12,7 @@
 <div class="content">
     <div class="row">
         <h1>OrderMVC</h1>
+        @include('_header')
     </div>
 
     @yield('content')

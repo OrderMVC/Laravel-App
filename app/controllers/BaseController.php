@@ -22,4 +22,11 @@ class BaseController extends Controller {
 		}
 	}
 
+	public function getCart()
+	{
+		if (Session::has('cart')) {
+			return Session::get('cart');
+		}
+	}
+
 }

@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemsOrdersTable extends Migration {
+class CreateItemOrderTable extends Migration {
 
 	/**
 	 * Run the migrations.
