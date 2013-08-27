@@ -16,7 +16,7 @@ class CreatePhysicalItemsTable extends Migration {
 			$table->increments('id');
 			$table->string('name');
 			$table->integer('stock');
-			$table->integer('wieght');
+			$table->decimal('weight', 3, 2);
 			$table->decimal('price', 8, 2);
 			$table->timestamps();
 		});
