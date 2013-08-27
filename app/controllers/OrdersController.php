@@ -29,9 +29,17 @@ class OrdersController extends BaseController {
 			return Redirect::back()->withInput()->withErrors($addressValidator);
 		}
 
-		// $address = Address::create($input);
-		$items = $this->getCart()->getItems();
-		return $items;
+		$address = Address::create($input);
+		$cart = $this->getCart();
+
+		$user = $this->getUser();
+
+		$attributes = $user->toArray();
+		$attributes['shipped_at'] = new Carbon\Carbon;
+
+		$order = Order::create($attributes);
+		$order->address()->associate($address)->save();
+		return $order;
 	}
 
 }
