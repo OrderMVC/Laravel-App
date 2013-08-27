@@ -4,8 +4,8 @@
 <div class="row">
 @if($items)
   <div class="grid">
-    @foreach($items as $key => $item)
-      <ul class="four_up tiles">
+    <ul class="tiles four_up">
+      @foreach($items as $key => $item)
         @if(class_basename($item) === 'PhysicalItem')
           <li>
             <figure>
@@ -37,8 +37,8 @@
             </figcaption>
           </li>
         @endif
-      </ul>
-    @endforeach
+      @endforeach
+    </ul>
   </div>
 @else
   <h4>Yo Man! There aren't any items yet!</h4>

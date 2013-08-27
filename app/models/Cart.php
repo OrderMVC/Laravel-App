@@ -46,4 +46,15 @@ class Cart extends Illuminate\Support\Collection
 
 		return $count;
 	}
+
+	public function getItems()
+	{
+		$items = array();
+
+		foreach ($this->items as $item) {
+			$items[] = $item['item'];
+		}
+
+		return $items;
+	}
 }

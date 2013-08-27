@@ -5,19 +5,17 @@
     <meta charset="utf-8">
 
     <title>Orders</title>
-    {{HTML::style('css/gumby.css')}}
+    <link rel="stylesheet" href="https://rawgithub.com/GumbyFramework/Gumby/master/css/gumby.css" />
     {{HTML::style('css/style.css')}}
 </head>
 <body>
-<div class="content">
-    <div class="row">
-        <h1>{{HTML::linkroute('index', 'OrderMVC')}}</h1>
-        @include('_header')
-        @include('_alerts')
-    </div>
-
-    @yield('content')
+<div class="row">
+    <h1>{{HTML::linkroute('index', 'OrderMVC')}}</h1>
+    @include('_header')
+    @include('_alerts')
 </div>
+
+@yield('content')
 
 {{HTML::script('js/libs/jquery-2.0.2.min.js')}}
 <script>
