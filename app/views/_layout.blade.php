@@ -11,7 +11,7 @@
 <body>
 <div class="content">
     <div class="row">
-        <h1>OrderMVC</h1>
+        <h1>{{HTML::linkroute('index', 'OrderMVC')}}</h1>
         @include('_header')
     </div>
 

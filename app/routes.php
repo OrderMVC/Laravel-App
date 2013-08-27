@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', array('uses' => 'HomeController@index'));
+Route::get('/', array('uses' => 'HomeController@index', 'as' => 'index'));
 
 Route::resource('orders', 'OrdersController');
 
