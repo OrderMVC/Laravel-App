@@ -16,6 +16,9 @@
               <p><strong>{{$item->name}}</strong></p>
               <p>Weight: {{$item->weight}} Lbs</p>
               <p>{{$item->stock}} Left</p>
+              <div class="btn secondary">
+                {{HTML::linkRoute('physical-items.add', 'Add To Cart', array($item->id))}}
+              </div>
             </figcaption>
           </li>
         @else
@@ -28,6 +31,9 @@
               <p><strong>{{$item->name}}</strong></p>
               <p>Size: {{$item->size}} Mbs</p>
               <p>Format: {{$item->format}}</p>
+              <div class="btn secondary">
+                {{HTML::linkRoute('digital-items.add', 'Add To Cart', array($item->id))}}
+              </div>
             </figcaption>
           </li>
         @endif
