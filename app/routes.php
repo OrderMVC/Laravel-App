@@ -11,7 +11,9 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/', array('uses' => 'HomeController@index'));
+
+Route::group(array('prefix' => 'orders'), function()
 {
-	return View::make('hello');
+	Route::get('orders', array('uses' => 'OrdersController@index', 'as' => 'orders.index'));
 });

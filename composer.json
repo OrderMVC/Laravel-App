@@ -3,7 +3,7 @@
 	"description": "The Laravel Framework.",
 	"keywords": ["framework", "laravel"],
 	"require": {
-		"laravel/framework": "4.0.*"
+		"laravel/framework": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

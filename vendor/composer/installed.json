@@ -1698,18 +1698,94 @@
         ]
     },
     {
-        "name": "laravel/framework",
-        "version": "4.0.x-dev",
-        "version_normalized": "4.0.9999999.9999999-dev",
+        "name": "phpseclib/phpseclib",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
         "source": {
             "type": "git",
-            "url": "https://github.com/laravel/framework.git",
-            "reference": "1595e22e352be7813ec5ff2f056036a2ddf9a49b"
+            "url": "https://github.com/phpseclib/phpseclib.git",
+            "reference": "df45abcda0b54ecba92775c7d873b1698c6d00d8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/laravel/framework/zipball/1595e22e352be7813ec5ff2f056036a2ddf9a49b",
-            "reference": "1595e22e352be7813ec5ff2f056036a2ddf9a49b",
+            "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/df45abcda0b54ecba92775c7d873b1698c6d00d8",
+            "reference": "df45abcda0b54ecba92775c7d873b1698c6d00d8",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.0.0"
+        },
+        "suggest": {
+            "ext-gmp": "Install the GMP (GNU Multiple Precision) extension in order to speed up arbitrary precision integer arithmetic operations.",
+            "ext-mcrypt": "Install the Mcrypt extension in order to speed up a wide variety of cryptographic operations.",
+            "pear-pear/PHP_Compat": "Install PHP_Compat to get phpseclib working on PHP >= 4.3.3."
+        },
+        "time": "2013-08-21 04:52:15",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.3-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Crypt": "phpseclib/",
+                "File": "phpseclib/",
+                "Math": "phpseclib/",
+                "Net": "phpseclib/"
+            },
+            "files": [
+                "phpseclib/Crypt/Random.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "include-path": [
+            "phpseclib/"
+        ],
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jim Wigginton",
+                "email": "terrafrost@php.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP Secure Communications Library - Pure-PHP implementations of RSA, AES, SSH2, SFTP, X.509 etc.",
+        "homepage": "http://phpseclib.sourceforge.net",
+        "keywords": [
+            "BigInteger",
+            "aes",
+            "asn.1",
+            "asn1",
+            "crypto",
+            "cryptography",
+            "encryption",
+            "rsa",
+            "security",
+            "sftp",
+            "signature",
+            "signing",
+            "ssh",
+            "x.509",
+            "x509"
+        ]
+    },
+    {
+        "name": "laravel/framework",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/laravel/framework.git",
+            "reference": "7ea725f1a22ea825d05c056078bc006995cc4009"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/laravel/framework/zipball/7ea725f1a22ea825d05c056078bc006995cc4009",
+            "reference": "7ea725f1a22ea825d05c056078bc006995cc4009",
             "shasum": ""
         },
         "require": {
@@ -1721,6 +1797,7 @@
             "nesbot/carbon": "1.*",
             "patchwork/utf8": "1.1.*",
             "php": ">=5.3.0",
+            "phpseclib/phpseclib": "0.3.x",
             "predis/predis": "0.8.*",
             "swiftmailer/swiftmailer": "5.0.*",
             "symfony/browser-kit": "2.3.*",
@@ -1772,11 +1849,11 @@
             "pda/pheanstalk": "2.0.*",
             "phpunit/phpunit": "3.7.*"
         },
-        "time": "2013-08-27 05:15:16",
+        "time": "2013-08-27 15:09:16",
         "type": "library",
         "extra": {
             "branch-alias": {
-                "dev-master": "4.0-dev"
+                "dev-master": "4.1-dev"
             }
         },
         "installation-source": "source",
