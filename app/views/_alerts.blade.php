@@ -1,5 +1,5 @@
 @if($message = Session::get('error'))
-	<div class="error alert">
+	<div class="danger alert">
 		{{$message}}
 		<i class="dismiss icon-cancel"></i>
 	</div>

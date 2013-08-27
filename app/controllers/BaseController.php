@@ -15,10 +15,12 @@ class BaseController extends Controller {
 		}
 	}
 
-	public function getUser()
+	public function getUser($createUser = false)
 	{
 		if (Session::has('user')) {
-			return Session::get('user');
+			return new User(Session::get('user'));
+		} elseif ($createUser) {
+			return new User();
 		}
 	}
 
