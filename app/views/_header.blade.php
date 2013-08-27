@@ -15,7 +15,7 @@
 <div class="row">
 	<h4>
 		Cart
-		<li class="secondary badge">{{count($cart)}}</li>
+		<li class="secondary badge">{{$cart->count()}}</li>
 	</h4>
 	<p>
 		{{HTML::linkRoute('cart.index', 'View Cart')}}

@@ -22,4 +22,5 @@ Route::get('digital_items/{id}/add', array('uses' => 'DigitalItemsController@add
 
 Route::get('login', array('uses' => 'UsersController@create', 'as' => 'users.create'));
 
-Route::get('cart', array('uses' => 'Cart@index', 'as' => 'cart.index'));
+Route::get('cart', array('uses' => 'CartController@index', 'as' => 'cart.index'));
+Route::get('cart/empty', array('uses' => 'CartController@destroy', 'as' => 'cart.destroy'));
