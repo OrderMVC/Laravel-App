@@ -8,6 +8,8 @@ $baseDir = dirname($vendorDir);
 return array(
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',
+    'Cart' => $baseDir . '/app/models/Cart.php',
+    'CartController' => $baseDir . '/app/controllers/CartController.php',
     'ClassPreloader\\Application' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/Application.php',
     'ClassPreloader\\ClassList' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/ClassList.php',
     'ClassPreloader\\ClassLoader' => $vendorDir . '/classpreloader/classpreloader/src/ClassPreloader/ClassLoader.php',
@@ -36,6 +38,7 @@ return array(
     'Crypt_Twofish' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/Twofish.php',
     'DatabaseSeeder' => $baseDir . '/app/database/seeds/DatabaseSeeder.php',
     'DigitalItem' => $baseDir . '/app/models/DigitalItem.php',
+    'DigitalItemsController' => $baseDir . '/app/controllers/DigitalItemsController.php',
     'DigitalItemsSeeder' => $baseDir . '/app/database/seeds/DigitalItemsSeeder.php',
     'Doctrine\\Common\\Annotations\\Annotation' => $vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations/Annotation.php',
     'Doctrine\\Common\\Annotations\\AnnotationException' => $vendorDir . '/doctrine/annotations/lib/Doctrine/Common/Annotations/AnnotationException.php',
