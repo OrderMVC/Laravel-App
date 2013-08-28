@@ -11,4 +11,9 @@ abstract class Item extends Eloquent
 	{
 		return $this->morphToMany('Order', 'item', 'item_order')->withPivot('amount');
 	}
+
+	public function getTotalPriceAttribute()
+	{
+		return $this->attributes['price'] * $this->attributes['amount'];
+	}
 }

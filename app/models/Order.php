@@ -34,7 +34,11 @@ class Order extends Eloquent
 				$instances[$type] = new $type;
 			}
 
-			$collection->add($instances[$type]->find($item->item_id));
+			$amount = $item->amount;
+			$item = $instances[$type]->find($item->item_id);
+			$item->amount = $amount;
+
+			$collection->add($item);
 		}
 
 		return $collection;
@@ -47,7 +51,7 @@ class Order extends Eloquent
 		$total = 0;
 
 		foreach ($items as $item) {
-			$total += $item->price;
+			$total += ($item->price * $item->amount);
 		}
 
 		return $total;

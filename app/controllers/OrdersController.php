@@ -55,4 +55,13 @@ class OrdersController extends BaseController {
 		return Redirect::route('orders.index');
 	}
 
+	public function show($id)
+	{
+		$cart = $this->getCart();
+		$user = $this->getUser();
+		$order = Order::find($id);
+
+		return View::make('orders.show', compact('cart', 'user', 'order'));
+	}
+
 }
