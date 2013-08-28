@@ -8,7 +8,7 @@ class DigitalItemsSeeder extends Seeder {
 
         $digital_items = array(
         	array(
-        		'name'		=> 'Coaser Boss',
+        		'name'		=> 'Ferris Wheel Boss',
 				'size'		=> 1028,
 				'format'	=> 'dmg',
 				'price'		=> 19.95,
