@@ -5,6 +5,7 @@
       <th>Orderer</th>
       <th>Items</th>
       <th>Price</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -14,6 +15,7 @@
         <td>{{$order->fullName}}</td>
         <td>{{$order->items->count()}}</td>
         <td>{{currency($order->total)}}</td>
+        <td>{{HTML::linkRoute('orders.show', 'View Details', array($order->id))}}</td>
       </tr>
     @endforeach
   </tbody>
