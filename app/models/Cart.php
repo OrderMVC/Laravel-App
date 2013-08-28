@@ -57,4 +57,24 @@ class Cart extends Illuminate\Support\Collection
 
 		return $items;
 	}
+
+	public function saveToOrder(Order $order)
+	{
+		foreach ($this->items as $item) {
+			$item['item']->orders()->attach($order, array('amount' => $item['count']));
+		}
+	}
+
+	public function getTotal()
+	{
+		$items = $this->getItems();
+
+		$total = 0;
+
+		foreach ($items as $item) {
+			$total += $item->price;
+		}
+
+		return $total;
+	}
 }

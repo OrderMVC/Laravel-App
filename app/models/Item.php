@@ -6,4 +6,9 @@ abstract class Item extends Eloquent
 	{
 		return str_replace('Item', '', class_basename($this));
 	}
+
+	public function orders()
+	{
+		return $this->morphToMany('Order', 'item', 'item_order')->withPivot('amount');
+	}
 }

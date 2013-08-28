@@ -6,6 +6,6 @@ class Address extends Eloquent
 
 	public function order()
 	{
-		return $this->hasOne('Oder');
+		return $this->hasOne('Order');
 	}
 }

@@ -9,6 +9,15 @@ class OrdersController extends BaseController {
 		'zip' => 'required',
 	);
 
+	public function index()
+	{
+		$cart = $this->getCart();
+		$user = $this->getUser();
+		$orders = Order::with('address')->get();
+
+		return View::make('orders.index', compact('cart', 'user', 'orders'));
+	}
+
 	public function create()
 	{
 		$cart = $this->getCart();
@@ -39,7 +48,11 @@ class OrdersController extends BaseController {
 
 		$order = Order::create($attributes);
 		$order->address()->associate($address)->save();
-		return $order;
+		$cart->saveToOrder($order);
+		new Cart;
+
+		Session::flash('success', 'Successfully Submitted Order');
+		return Redirect::route('orders.index');
 	}
 
 }

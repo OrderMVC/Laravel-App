@@ -13,6 +13,7 @@ class CreateItemOrderTable extends Migration {
 	{
 		Schema::create('item_order', function($table)
 		{
+			$table->increments('id');
 			$table->integer('order_id');
 			$table->integer('item_id');
 			$table->integer('amount');
