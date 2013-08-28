@@ -2,17 +2,11 @@
 
 @section('content')
 <div class="row">
-@if($cart->count())
-  @include('cart._table')
+@if($orders->count())
+  @include('orders._table')
   <div class="row">
-    <div class="btn info medium">
-      {{HTML::linkRoute('cart.destroy', 'Empty Cart')}}
-    </div>
     <div class="medium secondary btn">
       {{HTML::linkRoute('items.index', 'Back To Shopping')}}
-    </div>
-    <div class="btn primary medium">
-      {{HTML::linkRoute('orders.create', 'Checkout')}}
     </div>
   </div>
 @else

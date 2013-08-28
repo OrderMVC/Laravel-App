@@ -52,4 +52,14 @@ class Order extends Eloquent
 
 		return $total;
 	}
+
+	public function getFullNameAttribute()
+	{
+		return $this['attributes']['first_name'] . ' ' . $this['attributes']['last_name'];
+	}
+
+	public function getShippedAtAttribute()
+	{
+		return new Carbon\Carbon($this['attributes']['shipped_at']);
+	}
 }
