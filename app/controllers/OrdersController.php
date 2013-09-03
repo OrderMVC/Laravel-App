@@ -25,6 +25,10 @@ class OrdersController extends BaseController {
 		$order = new Order();
 		$order->address = new Address();
 
+		if (!$user) {
+			return Redirect::guest('login');
+		}
+
 		return View::make('orders.create', compact('cart', 'user', 'order'));
 	}
 

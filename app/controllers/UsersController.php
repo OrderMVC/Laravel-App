@@ -29,7 +29,7 @@ class UsersController extends BaseController {
 
 		Session::set('user', $user->toArray());
 
-		return Redirect::route('index');
+		return Redirect::intended('');
 	}
 
 }
