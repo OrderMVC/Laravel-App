@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class CreateItemOrderTable extends Migration {
+class CreateOrderItemsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -11,11 +11,12 @@ class CreateItemOrderTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('item_order', function($table)
+		Schema::create('order_items', function($table)
 		{
 			$table->increments('id');
 			$table->integer('order_id');
 			$table->integer('item_id');
+			$table->decimal('price', 8, 2);
 			$table->integer('amount');
 			$table->string('item_type');
 		});
@@ -28,7 +29,7 @@ class CreateItemOrderTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('item_order');
+		Schema::drop('order_items');
 	}
 
 }

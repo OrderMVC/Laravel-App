@@ -14,44 +14,17 @@ class Order extends Eloquent
 		return $this->belongsTo('Address');
 	}
 
-	public function getItemsAttribute()
+	public function orderItems()
 	{
-		$id = $this->getKey();
-
-		$builder = $this->newBaseQueryBuilder();
-
-		$items = $builder->from('item_order')
-			->where('order_id', $id)
-			->get();
-
-		$collection = $this->newCollection();
-		$instances = array();
-
-		foreach($items as $item)
-		{
-			$type = $item->item_type;
-			if (!isset($instances[$type])) {
-				$instances[$type] = new $type;
-			}
-
-			$amount = $item->amount;
-			$item = $instances[$type]->find($item->item_id);
-			$item->amount = $amount;
-
-			$collection->add($item);
-		}
-
-		return $collection;
+		$this->hasMany('OrderItem');
 	}
 
 	public function getTotalAttribute()
 	{
-		$items = $this->getItemsAttribute();
-
 		$total = 0;
 
-		foreach ($items as $item) {
-			$total += ($item->price * $item->amount);
+		foreach ($this->items as $item) {
+			$total += ($item->totalPrice);
 		}
 
 		return $total;
