@@ -10,7 +10,7 @@ class Cart extends Illuminate\Support\Collection
 
 	public function save()
 	{
-		Session::set('cart', $this->toArray());
+		Session::set('cart', $this);
 	}
 
 	public function add($item)
@@ -18,17 +18,19 @@ class Cart extends Illuminate\Support\Collection
 		$found = false;
 
 		foreach ($this->items as $key => $cartItem) {
-			if ($cartItem['item'] == $item) {
+			if ($cartItem->item == $item) {
 				$found = true;
-				$this->items[$key]['count'] ++;
+				$cartItem->amount ++;
 			}
 		}
 
 		if (! $found) {
-			$this->items[] = array(
-				'count' => 1,
-				'item' => $item
-			);
+			$orderItem = new OrderItem(array(
+				'amount' => 1,
+				'item' => $item,
+				'price' => $item->price,
+			));
+			$this->items[] = $orderItem;
 		}
 
 		$this->save();
@@ -41,7 +43,7 @@ class Cart extends Illuminate\Support\Collection
 		$count = 0;
 
 		foreach ($this->items as $item) {
-			$count += $item['count'];
+			$count += $item['amount'];
 		}
 
 		return $count;
@@ -49,13 +51,7 @@ class Cart extends Illuminate\Support\Collection
 
 	public function getItems()
 	{
-		$items = array();
-
-		foreach ($this->items as $item) {
-			$items[] = $item['item'];
-		}
-
-		return $items;
+		return $this->items;
 	}
 
 	public function saveToOrder(Order $order)
@@ -72,7 +68,7 @@ class Cart extends Illuminate\Support\Collection
 		$total = 0;
 
 		foreach ($items as $item) {
-			$total += $item->price;
+			$total += $item->price * $item->amount;
 		}
 
 		return $total;

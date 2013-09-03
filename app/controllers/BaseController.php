@@ -27,7 +27,7 @@ class BaseController extends Controller {
 	public function getCart()
 	{
 		if (Session::has('cart')) {
-			return new Cart(Session::get('cart'));
+			return Session::get('cart');
 		} else {
 			return new Cart;
 		}
