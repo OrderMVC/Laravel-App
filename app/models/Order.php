@@ -16,15 +16,15 @@ class Order extends Eloquent
 
 	public function orderItems()
 	{
-		$this->hasMany('OrderItem');
+		return $this->hasMany('OrderItem');
 	}
 
 	public function getTotalAttribute()
 	{
 		$total = 0;
 
-		foreach ($this->items as $item) {
-			$total += ($item->totalPrice);
+		foreach ($this->orderItems as $orderItem) {
+			$total += ($orderItem->totalPrice);
 		}
 
 		return $total;

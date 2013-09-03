@@ -19,6 +19,7 @@ class CreateOrderItemsTable extends Migration {
 			$table->decimal('price', 8, 2);
 			$table->integer('amount');
 			$table->string('item_type');
+			$table->timestamps();
 		});
 	}
 

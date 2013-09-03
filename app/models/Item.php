@@ -7,7 +7,7 @@ abstract class Item extends Eloquent
 		return str_replace('Item', '', class_basename($this));
 	}
 
-	public function orders()
+	public function orderItem()
 	{
 		return $this->morphOne('OrderItem', 'item');
 	}

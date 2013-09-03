@@ -27,8 +27,9 @@ class Cart extends Illuminate\Support\Collection
 		if (! $found) {
 			$orderItem = new OrderItem(array(
 				'amount' => 1,
-				'item' => $item,
 				'price' => $item->price,
+				'item_id' => $item->id,
+				'item_type' => get_class($item),
 			));
 			$this->items[] = $orderItem;
 		}
@@ -56,8 +57,9 @@ class Cart extends Illuminate\Support\Collection
 
 	public function saveToOrder(Order $order)
 	{
-		foreach ($this->items as $item) {
-			$item['item']->orders()->attach($order, array('amount' => $item['count']));
+		foreach ($this->items as $cartItem) {
+			$cartItem->order()->associate($order);
+			$cartItem->save();
 		}
 	}
 
@@ -74,3 +76,4 @@ class Cart extends Illuminate\Support\Collection
 		return $total;
 	}
 }
+
