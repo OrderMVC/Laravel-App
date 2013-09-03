@@ -26,6 +26,7 @@ class OrdersController extends BaseController {
 		$order->address = new Address();
 
 		if (!$user) {
+			Session::flash('error', 'You must login before you can checkout.');
 			return Redirect::guest('login');
 		}
 
